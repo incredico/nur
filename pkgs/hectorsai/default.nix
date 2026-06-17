@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "16vw9mmv15vijkqcr76mkdhnxp8hjzz7x05b5lzns4zx92zw2imy";
-    aarch64-linux = "0x1kwkz6hq5k7y2z1pf53gx32iaf2c3kmk568mx1dzlihj9jgzvc";
-    x86_64-darwin = "0bmbk9wjdx5b276r1ffvf573vnvfs88fqwqplwrd7ipgbkfbqgp9";
-    aarch64-darwin = "10p19zghw2isga1r6jxnsiwjpr7i25h73854w9a3wxji438cg094";
+    x86_64-linux = "0kcvv95gy3vsk8rqpzbwhvf3wdizbnm58px6v2vh913v9kzfwd1j";
+    aarch64-linux = "100yly01amcisvarjzqp5qdbx0pssy5wxz0lm37qvz149rjpjgnj";
+    x86_64-darwin = "0kclibv827g16hmajdc05bmvq3c4fbrn1isrnzj8x91wkxdnylf9";
+    aarch64-darwin = "19r7bs31qd692dm6qaj9y445md5zvk1fcxqm351yqrbwap5amk6r";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/incredico/nur/releases/download/v0.0.4/hectorsai_0.0.4_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/incredico/nur/releases/download/v0.0.4/hectorsai_0.0.4_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/incredico/nur/releases/download/v0.0.4/hectorsai_0.0.4_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/incredico/nur/releases/download/v0.0.4/hectorsai_0.0.4_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/incredico/nur/releases/download/v0.0.5/hectorsai_0.0.5_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/incredico/nur/releases/download/v0.0.5/hectorsai_0.0.5_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/incredico/nur/releases/download/v0.0.5/hectorsai_0.0.5_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/incredico/nur/releases/download/v0.0.5/hectorsai_0.0.5_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "hectorsai";
-  version = "0.0.4";
+  version = "0.0.5";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
